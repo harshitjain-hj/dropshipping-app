@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <title>King Queen</title>
+
+  <link rel="manifest" href="manifest.json">
+  <!-- ios support -->
+  <link rel="apple-touch-icon" href="icons/favicon-96x96-dunplab-manifest-11928.png">
+  <meta name="apple-mobile-web-app-status-bar" contents="#aa7700">
+  <!-- <meta name="theme-color" content="#f5f5f5"> -->
+  <!-- Chrome, Firefox OS and Opera -->
+  <meta name="theme-color" content="#f5f5f5">
+  <!-- iOS Safari -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="#f5f5f5">
+</head>
+<body class="grey lighten-4">
+
+  <!-- NAVBAR -->
+  <!-- MOBILE SIDENAV -->
+  <ul class="sidenav grey lighten-4" id="mobile-demo">
+    <li><div class="user-view">
+        <div class="background">
+          <img src="https://image.freepik.com/free-photo/old-grunge-cement-wall-backgrounds_34552-195.jpg">
+        </div>
+        <a href="#user"><img class="circle user" src="#"></a>
+        <a href="#name"><span class="white-text name">Admin</span></a>
+        <a href="#email"><span class="white-text email">harshit@gmail.com</span></a>
+      </div>
+    </li>
+    <li class="logged-in" style="display:none">
+      <a href="#" class="modal-trigger" data-target="modal-account"><i class="material-icons">account_circle</i>Account</a>
+    </li>
+    <li class="logged-in" style="display:none">
+      <a href="#" class="" id="logout"><i class="material-icons">lock</i>Logout</a>
+    </li>
+    <li class="logged-out" style="display:none">
+      <a href="#" class="modal-trigger" data-target="modal-login"><i class="material-icons">exit_to_app</i>Login</a>
+    </li>
+    <li class="logged-out" style="display:none">
+      <a href="#" class="modal-trigger" data-target="modal-signup"><i class="material-icons">touch_app</i>Sign Up</a>
+    </li>
+  </ul>
+  
+
+  <div class="container">
+    <div class="card z-depth-0 grey lighten-4">
+      <div class="card-content" style="padding: 0;">
+        <ul class="collection " style="border: none; margin: 0px">
+          <li class="collection-item z-depth-0 grey lighten-4">
+            <div>
+              <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+              <a href="/" class="secondary-content"><i class="material-icons">refresh</i></a>
+              <a href="#" class="secondary-content"><i class="material-icons">search</i></a>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="card-tabs">
+        <ul class="tabs z-depth-0 grey lighten-4 tabs-fixed-width categories">
+          <li class="tab"><a class="active" href="#featured">Featured</a></li>
+        </ul>
+      </div>
+      <div class="card-content grey lighten-4 categories_content" style="padding: 5px;">
+        <div id="featured">
+          <div class="row">
+            <h5 class="center grey-text text-darken-2">Loading...</h5>
+            <div class="progress" style="margin: auto; width: 40%;">
+              <div class="indeterminate"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SIGN UP MODAL -->
+  <div id="modal-signup" class="modal">
+    <div class="modal-content">
+      <h4>Sign up</h4>
+      <form id="signup-form">
+        <div class="input-field">
+          <input type="text" id="signup-name" required />
+          <label for="signup-name">Name</label>
+        </div>
+        <div class="input-field">
+          <input type="email" id="signup-email" required />
+          <label for="signup-email">Email address</label>
+        </div>
+        <div class="input-field">
+          <input type="password" id="signup-password" required />
+          <label for="signup-password">Choose password</label>
+        </div>
+        <button class="btn yellow darken-2 z-depth-0">Sign Up</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- LOGIN MODAL -->
+  <div id="modal-login" class="modal">
+    <div class="modal-content">
+      <h4>Login</h4>
+      <form id="login-form">
+        <div class="input-field">
+          <input type="email" id="login-email" required />
+          <label for="login-email">Email address</label>
+        </div>
+        <div class="input-field">
+          <input type="password" id="login-password" required />
+          <label for="login-password">Your password</label>
+        </div>
+        <button class="btn yellow darken-2 z-depth-0">Login</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ACCOUNT MODAL -->
+  <div id="modal-account" class="modal">
+    <div class="modal-content center-align">
+      <h4>Account details</h4>
+      <div class="account-details"></div>
+    </div>
+  </div>
+
+  <!-- CREATE CATEGORY MODAL -->
+  <div id="modal-category" class="modal">
+    <div class="modal-content">
+      <h4>Create Category</h4>
+      <form id="create-category-form">
+        <div class="input-field">
+          <input type="text" id="cat_name" required>
+          <label for="title">Category Name</label>
+        </div>
+        <div class="input-field">
+          <textarea id="cat_description" class="materialize-textarea" required></textarea>
+          <label for="content">Category Description</label>
+        </div>
+        <button class="btn yellow darken-2 z-depth-0">Create</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- CREATE ITEM MODAL -->
+  <div id="modal-item" class="modal modal-fixed-footer">
+    <div class="modal-content center" style="padding-top: 0px; padding-bottom: 0px">
+      <h5>Create Item</h5>
+      <form id="create-item-form">
+        <div class="input-field">
+          <input type="text" id="item_name" required>
+          <label for="item_name">Name</label>
+        </div>
+        <div class="input-field">
+          <textarea id="item_desc" class="materialize-textarea" required></textarea>
+          <label for="item_desc">Description</label>
+        </div>
+        <div class="input-field">
+          <input type="number" id="item_price" required>
+          <label for="item_price">Price</label>
+        </div>
+        <div class="input-field col s12">
+          <select id="category_options" required>
+            <option value="" disabled selected>Choose category</option>
+            <!-- Option added using DOM -->
+          </select>
+        </div>
+        <div class="file-field input-field">
+          <div class="red lighten-2 btn-small z-depth-0">
+            <i class="material-icons">image</i>
+            <input type="file" id="item_image" />
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text" required>
+          </div>
+        </div>
+      <button class="btn yellow darken-2 z-depth-0">Create</button>
+      </form>
+    </div>
+  </div>
+
+<!-- FLOATING BOTTOM BUTTON -->
+  <div class=" logged-in fixed-action-btn" style="display:none">
+    <a class="btn-floating btn-large teal">
+      <i class="large material-icons">add</i>
+    </a>
+    <ul>
+      <li><a class="btn-floating green darken-1 modal-trigger" data-target="modal-category"><i class="material-icons">category</i></a></li>
+      <li><a class="btn-floating yellow darken-2 modal-trigger" data-target="modal-item"><i class="material-icons">post_add</i></a></li>
+    </ul>
+  </div>
+  
+    <!-- Firebase scripts -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-storage.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-analytics.js"></script>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="scripts/config.js"></script>
+    <script src="scripts/index.js"></script>
+    <script src="scripts/auth.js"></script>
+    <script src="scripts/ui.js"></script>
+
+    <style>
+      #loader-wrapper {
+        height:100%;
+        width:100%;
+        position:absolute;
+        /* top:0; */
+        left:0;
+        right:0;
+        background-color:#242f37;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* z-index: 1000; */
+      }
+      #loader-wrapper {
+        opacity: 1;
+        transition: opacity 1s; 
+      }
+
+      #slideSource.fade {
+        opacity: 0;
+      }
+    </style>
+</body>
+</html>
