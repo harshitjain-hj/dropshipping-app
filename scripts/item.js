@@ -23,7 +23,7 @@ const displayItem = (data) => {
         html = `
             <div class="row">
                 <div class="col s12 m5" style="padding: 0;">
-                    <div class="card-image">
+                    <div class="card-image inverted">
                         <img class="materialboxed" width="650" style="border-radius: 15px;" src="${data.item_image}">
                     </div>
                 </div>
@@ -52,7 +52,7 @@ const displayItem = (data) => {
                             &#8377;7484
                         </blockquote>
                     </div>
-                    <div class="row">
+                    <div class="row inverted">
                         <a class="btn-small yellow waves-effect waves-light darken-2 z-depth-0 center-align" href="https://api.whatsapp.com/send?phone=919479512111&text=Wanted to know more about this: ${window.location.href}" style="width: 100%">Buy</a>
                     </div>
                     <hr/>

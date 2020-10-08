@@ -1,0 +1,28 @@
+.dark-mode {
+    filter: invert(1) hue-rotate(180deg);
+}
+.invert {
+    filter: invert(1) hue-rotate(180deg);
+}
+
+#loader-wrapper {
+    height:100%;
+    width:100%;
+    position:absolute;
+    /* top:0; */
+    left:0;
+    right:0;
+    background-color:#242f37;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* z-index: 1000; */
+}
+#loader-wrapper {
+    opacity: 1;
+    transition: opacity 1s; 
+}
+
+#slideSource.fade {
+    opacity: 0;
+}

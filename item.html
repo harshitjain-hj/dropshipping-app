@@ -10,7 +10,8 @@
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  
+
+  <link rel="stylesheet" href="css/ui.css">
 
   <link rel="manifest" href="manifest.json">
   <!-- ios support -->
@@ -35,7 +36,8 @@
   <!-- NAVBAR -->
   <!-- MOBILE SIDENAV -->
   <ul class="sidenav grey lighten-4" id="mobile-demo">
-    <li><div class="user-view">
+    <li>
+      <div class="user-view inverted">
         <div class="background">
           <img src="https://image.freepik.com/free-photo/old-grunge-cement-wall-backgrounds_34552-195.jpg">
         </div>
@@ -55,6 +57,18 @@
     </li>
     <li class="logged-out" style="display:none">
       <a href="#" class="modal-trigger" data-target="modal-signup"><i class="material-icons">touch_app</i>Sign Up</a>
+    </li>
+    <li><div class="divider"></div></li>
+    <li class="center-align">
+      <span class="switch">
+        <label>
+          Light
+          <input name="theme" type="checkbox">
+          <span class="lever"></span>
+          Dark
+        </label>
+      </span>
+      <span class="new badge" data-badge-caption="Beta"></span>
     </li>
   </ul>
   
@@ -180,7 +194,7 @@
   </div>
 
 <!-- FLOATING BOTTOM BUTTON -->
-  <div class=" logged-in fixed-action-btn" style="display:none">
+  <div class="inverted logged-in fixed-action-btn" style="display:none">
     <a class="btn-floating btn-large teal">
       <i class="large material-icons">add</i>
     </a>
@@ -207,28 +221,5 @@
     <script src="scripts/auth.js"></script>
     <script src="scripts/item.js"></script>
     <script src="scripts/ui.js"></script>
-    <style>
-      #loader-wrapper {
-        height:100%;
-        width:100%;
-        position:absolute;
-        /* top:0; */
-        left:0;
-        right:0;
-        background-color:#242f37;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        /* z-index: 1000; */
-      }
-      #loader-wrapper {
-        opacity: 1;
-        transition: opacity 1s; 
-      }
-
-      #slideSource.fade {
-        opacity: 0;
-      }
-    </style>
 </body>
 </html>

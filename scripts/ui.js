@@ -120,7 +120,7 @@ const featuredItems = (cateId, data) => {
             <div class="col s6 m6 l3">
                 <a class="" href="/item.html?item=${doc.id}">
                     <div class="card grey lighten-4 z-depth-0">
-                        <div class="card-image">
+                        <div class="card-image inverted">
                             <img src="${item_data.item_image}" style="border-radius: 5%;">
                         </div>
                         <div class="card-content" style="padding: 2px 0px 2px 0px;">
@@ -161,3 +161,12 @@ document.addEventListener('DOMContentLoaded', function() {
     var instances = M.FloatingActionButton.init(floatadd, {direction: 'top', hoverEnabled: false});
 });
 
+// dark theme toogle
+var checkbox = document.querySelector('input[name=theme]');
+
+checkbox.addEventListener('change', function() {
+    document.documentElement.classList.toggle('dark-mode');
+    document.querySelectorAll('.inverted').forEach((result) => {
+        result.classList.toggle('invert');
+    });
+})
