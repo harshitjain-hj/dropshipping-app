@@ -1,6 +1,6 @@
 {
-    "name": "King Queen",
-    "short_name": "King Queen",
+    "name": "Drop Ship",
+    "short_name": "Drop Ship",
     "start_url": "index.html",
     "display": "standalone",
     "background_color": "#f5f5f5",
@@ -8,82 +8,82 @@
     "orientation": "portrait-primary",
     "icons": [
         {
-            "src": "icons/android-icon-192x192-dunplab-manifest-11928.png",
+            "src": "icons/android-icon-192x192-dunplab-manifest-16814.png",
             "type": "image/png",
             "sizes": "192x192",
             "purpose": "any maskable"
-           },
-           {
-            "src": "icons/apple-icon-180x180-dunplab-manifest-11928.png",
+        },
+        {
+            "src": "icons/apple-icon-180x180-dunplab-manifest-16814.png",
             "type": "image/png",
             "sizes": "180x180",
             "purpose": "any maskable"
-           },
-           {
-            "src": "icons/apple-icon-152x152-dunplab-manifest-11928.png",
+        },
+        {
+            "src": "icons/apple-icon-152x152-dunplab-manifest-16814.png",
             "type": "image/png",
             "sizes": "152x152",
             "purpose": "any maskable"
-           },
-           {
-            "src": "icons/apple-icon-144x144-dunplab-manifest-11928.png",
+        },
+        {
+            "src": "icons/apple-icon-144x144-dunplab-manifest-16814.png",
             "type": "image/png",
             "sizes": "144x144",
             "purpose": "any maskable"
-           },
-           {
-            "src": "icons/apple-icon-120x120-dunplab-manifest-11928.png",
+        },
+        {
+            "src": "icons/apple-icon-120x120-dunplab-manifest-16814.png",
             "type": "image/png",
             "sizes": "120x120",
             "purpose": "any maskable"
-           },
-           {
-            "src": "icons/apple-icon-114x114-dunplab-manifest-11928.png",
+        },
+        {
+            "src": "icons/apple-icon-114x114-dunplab-manifest-16814.png",
             "type": "image/png",
             "sizes": "114x114",
             "purpose": "any maskable"
-           },
-           {
-            "src": "icons/favicon-96x96-dunplab-manifest-11928.png",
+        },
+        {
+            "src": "icons/favicon-96x96-dunplab-manifest-16814.png",
             "type": "image/png",
             "sizes": "96x96",
             "purpose": "any maskable"
-           },
-           {
-            "src": "icons/apple-icon-76x76-dunplab-manifest-11928.png",
+        },
+        {
+            "src": "icons/apple-icon-76x76-dunplab-manifest-16814.png",
             "type": "image/png",
             "sizes": "76x76",
             "purpose": "any maskable"
-           },
-           {
-            "src": "icons/apple-icon-72x72-dunplab-manifest-11928.png",
+        },
+        {
+            "src": "icons/apple-icon-72x72-dunplab-manifest-16814.png",
             "type": "image/png",
             "sizes": "72x72",
             "purpose": "any maskable"
-           },
-           {
-            "src": "icons/apple-icon-60x60-dunplab-manifest-11928.png",
+        },
+        {
+            "src": "icons/apple-icon-60x60-dunplab-manifest-16814.png",
             "type": "image/png",
             "sizes": "60x60",
             "purpose": "any maskable"
-           },
-           {
-            "src": "icons/apple-icon-57x57-dunplab-manifest-11928.png",
+        },
+        {
+            "src": "icons/apple-icon-57x57-dunplab-manifest-16814.png",
             "type": "image/png",
             "sizes": "57x57",
             "purpose": "any maskable"
-           },
-           {
-            "src": "icons/favicon-32x32-dunplab-manifest-11928.png",
+        },
+        {
+            "src": "icons/favicon-32x32-dunplab-manifest-16814.png",
             "type": "image/png",
             "sizes": "32x32",
             "purpose": "any maskable"
-           },
-           {
-            "src": "icons/favicon-16x16-dunplab-manifest-11928.png",
+        },
+        {
+            "src": "icons/favicon-16x16-dunplab-manifest-16814.png",
             "type": "image/png",
             "sizes": "16x16",
             "purpose": "any maskable"
-           }
+        }
     ]
 }

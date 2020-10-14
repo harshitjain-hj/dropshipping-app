@@ -53,7 +53,7 @@ const displayItem = (data) => {
                         </blockquote>
                     </div>
                     <div class="row inverted">
-                        <a class="btn-small yellow waves-effect waves-light darken-2 z-depth-0 center-align" href="https://api.whatsapp.com/send?phone=919479512111&text=Wanted to know more about this: ${window.location.href}" style="width: 100%">Buy</a>
+                        <a class="btn-small yellow waves-effect waves-light darken-2 z-depth-0 center-align" href="https://api.whatsapp.com/send?phone=919999999999&text=Wanted to know more about this: ${window.location.href}" style="width: 100%">Buy</a>
                     </div>
                     <hr/>
                     <div class="row">

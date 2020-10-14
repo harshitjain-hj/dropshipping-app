@@ -14,7 +14,7 @@ const setupUI = (user) => {
         db.collection('users').doc(user.uid).get().then(doc => {
             sideNavEmail.innerHTML = user.email;
             sideNavName.innerHTML = doc.data().name;
-            sideNavUser.src = 'https://media-exp1.licdn.com/dms/image/C4D03AQFc3SN_jyYQsA/profile-displayphoto-shrink_100_100/0?e=1603929600&v=beta&t=HrjAA8w9pCrfJEZoVewEBIiOpP8jbzIph8GLSK4Z608';
+            sideNavUser.src = 'https://media-exp1.licdn.com/dms/image/C4D03AQECCGZW4zS2NA/profile-displayphoto-shrink_400_400/0?e=1608163200&v=beta&t=zgAZVqFzY3PXPK3uxfxw21jVPFK1BhpE1pEO6DREfpw';
             const html = `
                 <div>Hello ${doc.data().name}</div>
                 <div>You are logged in as ${user.email}</div>
