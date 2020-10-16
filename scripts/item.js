@@ -1,4 +1,4 @@
-var url_string = window.location.href
+var url_string = window.location.href;
 var url = new URL(url_string);
 var itemId = url.searchParams.get("item");
 
@@ -6,6 +6,10 @@ var itemId = url.searchParams.get("item");
 db.collection('items').doc(itemId).get().then((snapshot) => {
     displayItem(snapshot.data());
 })
+
+db.collection('categories').onSnapshot(snapshot => {
+    selectCateOption(snapshot.docs);
+});
 
 var itemContent = document.querySelector('.item_content');
 
@@ -69,6 +73,25 @@ const displayItem = (data) => {
         // add dataId to delete modal
         document.querySelector("#modal-delete button").setAttribute("data-id", itemId);
         
+        // fill edit modal form
+        document.getElementById("item_name").value = data.item_name; //name
+
+        document.getElementById("item_desc").value = data.item_description; //description
+        M.textareaAutoResize(document.getElementById("item_desc"));
+        
+        document.getElementById("item_price").value = data.item_price; //price
+
+        document.getElementById("category_options").value = data.item_cate; //category
+        M.FormSelect.init(document.getElementById("category_options"))
+
+        // add dataId to update modal
+        document.querySelector("#modal-item button").setAttribute("data-id", itemId);
+
+
+        M.updateTextFields();
+
+
+        
     } else {
         html = `<div class="center">Nothing to show yet in this category!</br> Please check other!</div>`
     }
@@ -81,9 +104,8 @@ const displayItem = (data) => {
 const deleteButton = document.querySelector('#modal-delete button');
 deleteButton.addEventListener('click', evt => {
     var data_id = evt.target.getAttribute('data-id');
-    storage.ref("apple_airpods.jfif")
     db.collection('items').doc(itemId).get().then((item) => {
-        var reference = storage.refFromURL(item.data().item_image)
+        const reference = storage.refFromURL(item.data().item_image);
         reference.delete().then(() => {
             db.collection('items').doc(data_id).delete().then(() => {
                 const modal = document.querySelector('#modal-delete');
@@ -94,3 +116,71 @@ deleteButton.addEventListener('click', evt => {
         })
     });
 });
+
+// UPDATE ITEM
+const updateItemForm = document.querySelector('#update-item-form');
+updateItemForm.addEventListener('submit', evt => {
+    evt.preventDefault();
+    var data_id = document.querySelector('#update-item-form button').getAttribute('data-id');
+    var item_image_url = null;
+    
+    db.collection('items').doc(data_id).get().then((item) => {
+        
+        item_image_url = item.data().item_image;
+        console.log(item_image_url);
+            // IF IMAGE IS REQUESTED TO BE UPDATED AS WELL
+            if(updateItemForm['item_image'].value){          
+            
+                // DELETING OLD IMAGE
+                const reference = storage.refFromURL(item.data().item_image);
+                reference.delete().then(() => {
+                    
+                    // UPLOADING NEW IMAGE
+                    file = updateItemForm['item_image'].files[0];
+                    console.log(file);
+                    const storageRef = storage.ref(file.name);
+                    console.log(storageRef);
+                    storageRef.put(file).on('state_changed', (snap) => {
+                        // let percentage = (snap.bytesTransferred / snap.totalBytes) * 100;
+                        // for uploading animation in case
+                        // setProgress(percentage);
+                    }, (err) => {
+                        console.log(err);
+                    }, async () => {
+                        item_image_url = await storageRef.getDownloadURL();
+                        db.collection('items').doc(data_id).update({
+                            item_name: updateItemForm['item_name'].value,
+                            item_description: updateItemForm['item_desc'].value,
+                            item_price: updateItemForm['item_price'].value,
+                            item_cate: updateItemForm['category_options'].value,
+                            item_image: item_image_url,
+                            updatedAt: firebase.firestore.Timestamp.now()
+                        })
+
+                    })
+                })
+
+            } else {
+                db.collection('items').doc(data_id).update({
+                    item_name: updateItemForm['item_name'].value,
+                    item_description: updateItemForm['item_desc'].value,
+                    item_price: updateItemForm['item_price'].value,
+                    item_cate: updateItemForm['category_options'].value,
+                    updatedAt: firebase.firestore.Timestamp.now()
+                })
+            }
+
+        }).then(() => {
+
+            const modal = document.querySelector('#modal-item');
+            M.Modal.getInstance(modal).close();
+            setTimeout(function(){
+                window.location.reload();
+                M.toast({html: 'Updated Succesfully!'});
+            });
+
+        })
+
+});
+
+        

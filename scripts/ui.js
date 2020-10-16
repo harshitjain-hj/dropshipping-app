@@ -39,40 +39,6 @@ const setupUI = (user) => {
     }
 }
 
-// the other way
-// setup categpories
-// const setupCategories = (data) => {
-//     let html = '';
-//     data.forEach(doc => {
-//         const category = doc.data();
-//         const li = `
-//         <div class="carousel-item blue-grey darken-2 white-text" href="#two!" style="width: 280px; height: 400px; border-radius: 25px; background-image: url(https://images.unsplash.com/photo-1566231396917-84d1e08d84d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);
-//         background-position: center;
-//         background-size: cover;
-//         background-blend-mode: multiply;">
-//             <div class="center-align" style="margin-top: 100px; padding: 10px 10px">
-//             <h4>${category.cat_name}</h4>
-//             <p class="white-text">${category.cat_description}</p>
-//             <a href="/category/item.html?cat=${doc.id}" class="btn-small pink lighten-2 z-depth-0">View</a>
-//             </div>
-//         </div>
-//         `;
-//         html += li;
-
-//         // filling option in create item form
-//         var option = document.createElement("option");
-//         option.text = category.cat_name;
-//         option.value = doc.id;
-//         categoryOption.add(option);
-
-//     });
-//     cateList.innerHTML = html;
-//     var carousel = document.querySelectorAll('.carousel');
-//     M.Carousel.init(carousel, {duration: 150, indicators: true, padding: 50});
-//     var elems = document.querySelectorAll('select');
-//     var instances = M.FormSelect.init(elems, {});
-// }
-
 const setupCategories = (data) => {
     let html = '';
     data.forEach(doc => {
@@ -107,6 +73,19 @@ const setupCategories = (data) => {
         // console.log(catId);
         fetchItems(catId);      
     }
+}
+
+const selectCateOption = (data) => {
+    data.forEach(doc => {
+        const category = doc.data();
+        // filling option in create item form
+        var option = document.createElement("option");
+        option.text = category.cat_name;
+        option.value = doc.id;
+        categoryOption.add(option);
+    });
+    var elems = document.querySelectorAll('select');
+    M.FormSelect.init(elems, {});
 }
 
 const featuredItems = (cateId, data) => {

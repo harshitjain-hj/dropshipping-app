@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <title>Drop Ship</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -29,6 +30,10 @@
   <meta property="og:image" content="/icons/icon-512x512.png"/>  
   <meta property="og:url" content="/" />  
 
+  <!-- favicon icon -->
+  <link rel="icon" type="image/png" href="/favicon.ico">
+  <!-- for IE -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" >
   
 </head>
 <body class="grey lighten-4">
@@ -147,11 +152,11 @@
     </div>
   </div>
 
-  <!-- CREATE ITEM MODAL -->
-  <div id="modal-item" class="modal modal-fixed-footer">
-    <div class="modal-content center" style="padding-top: 0px; padding-bottom: 0px">
-      <h5>Create Item</h5>
-      <form id="create-item-form">
+  <!-- UPDATE ITEM MODAL -->
+  <div id="modal-item" class="modal">
+    <div class="modal-content center">
+      <h5>Edit Item</h5>
+      <form id="update-item-form">
         <div class="input-field">
           <input type="text" id="item_name" required>
           <label for="item_name">Name</label>
@@ -166,7 +171,6 @@
         </div>
         <div class="input-field col s12">
           <select id="category_options" required>
-            <option value="" disabled selected>Choose category</option>
             <!-- Option added using DOM -->
           </select>
         </div>
@@ -176,10 +180,11 @@
             <input type="file" id="item_image" />
           </div>
           <div class="file-path-wrapper">
-            <input class="file-path validate" type="text" required>
+            <input class="file-path validate" type="text">
           </div>
+        <span class="red-text text-red-2">*Select the image icon if you want to change</span>
         </div>
-      <button class="btn yellow darken-2 z-depth-0">Create</button>
+        <button class="btn yellow darken-2 z-depth-0" data-id="">Update</button>
       </form>
     </div>
   </div>
@@ -199,7 +204,7 @@
       <i class="large material-icons">add</i>
     </a>
     <ul>
-      <li><a class="btn-floating yellow darken-2 modal-trigger" data-target="modal-item"><i class="material-icons">post_add</i></a></li>
+      <li><a class="btn-floating yellow darken-2 modal-trigger" data-target="modal-item"><i class="material-icons">edit</i></a></li>
       <li><a class="btn-floating red darken-2 modal-trigger" data-target="modal-delete"><i class="material-icons">delete</i></a></li>
     </ul>
   </div>
