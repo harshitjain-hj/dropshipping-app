@@ -92,11 +92,20 @@
       </ul>
     </div>
     <div class="card-content grey lighten-4 container item_content" style="padding: 5px;">
-      <div id="featured">
+      <div id="featured loading">
         <div class="row">
-          <h5 class="center grey-text text-darken-2">Loading...</h5>
-          <div class="progress" style="margin: auto; width: 40%;">
-            <div class="indeterminate"></div>
+          <div class="loading">
+            <div class="preloader-wrapper small active">
+              <div class="spinner-layer spinner-green-only">
+                <div class="circle-clipper left">
+                  <div class="circle"></div>
+                </div><div class="gap-patch">
+                  <div class="circle"></div>
+                </div><div class="circle-clipper right">
+                  <div class="circle"></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -121,7 +130,7 @@
           <input type="password" id="signup-password" required />
           <label for="signup-password">Choose password</label>
         </div>
-        <button class="btn yellow darken-2 z-depth-0">Sign Up</button>
+        <button class="btn yellow darken-2 z-depth-0 waves-effect waves-light">Sign Up</button>
       </form>
     </div>
   </div>
@@ -139,7 +148,7 @@
           <input type="password" id="login-password" required />
           <label for="login-password">Your password</label>
         </div>
-        <button class="btn yellow darken-2 z-depth-0">Login</button>
+        <button class="btn yellow darken-2 z-depth-0 waves-effect waves-light">Login</button>
       </form>
     </div>
   </div>
@@ -184,7 +193,7 @@
           </div>
         <span class="red-text text-red-2">*Select the image icon if you want to change</span>
         </div>
-        <button class="btn yellow darken-2 z-depth-0" data-id="">Update</button>
+        <button class="btn yellow darken-2 z-depth-0 waves-effect waves-light" data-id="">Update</button>
       </form>
     </div>
   </div>
@@ -193,14 +202,14 @@
   <div id="modal-delete" class="modal">
     <div class="modal-content center-align">
       <h5>Are you sure you want to delete?</h5>
-      <button class="btn red darken-2 z-depth-0" data-id="">Delete</button>
+      <button class="btn red darken-2 z-depth-0 waves-effect waves-light" data-id="">Delete</button>
       <!-- <button class="btn teal z-depth-0">Nope</button> -->
     </div>
   </div>
 
 <!-- FLOATING BOTTOM BUTTON -->
   <div class="inverted logged-in fixed-action-btn" style="display:none">
-    <a class="btn-floating btn-large teal">
+    <a class="btn-floating btn-large teal pulse">
       <i class="large material-icons">add</i>
     </a>
     <ul>

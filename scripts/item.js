@@ -26,13 +26,13 @@ const displayItem = (data) => {
     if (data) {
         html = `
             <div class="row">
-                <div class="col s12 m5" style="padding: 0;">
+                <div class="col s12 m6" style="padding: 0;">
                     <div class="card-image inverted">
                         <img class="materialboxed" width="650" style="border-radius: 15px;" src="${data.item_image}">
                     </div>
                 </div>
         
-                <div class="col s12 m7 hide-on-small-only">
+                <div class="col s12 m6 hide-on-small-only">
                     <div class="card-content">
                         <div class="row">
                             <h3 class="hide-on-small-only">${data.item_name}</h3>
@@ -50,13 +50,13 @@ const displayItem = (data) => {
                 </div>
 
                 <div class="col s12 m7 hide-on-med-and-up" style="padding: 20px 10px;">
-                    <div class="row">
+                    <div class="row" style="margin-bottom: 0px;">
                         <span class="card-title hide-on-med-and-up"><strong>${data.item_name}</strong></span>
-                        <blockquote class="flow-text">
+                        <blockquote class="flow-text" style="margin: 10px 0">
                             &#8377;7484
                         </blockquote>
                     </div>
-                    <div class="row inverted">
+                    <div class="row inverted" style="margin-bottom:10px">
                         <a class="btn-small yellow waves-effect waves-light darken-2 z-depth-0 center-align" href="https://api.whatsapp.com/send?phone=919999999999&text=Wanted to know more about this: ${window.location.href}" style="width: 100%">Buy</a>
                     </div>
                     <hr/>

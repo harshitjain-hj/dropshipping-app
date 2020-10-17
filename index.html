@@ -91,9 +91,18 @@
       <div class="card-content grey lighten-4 categories_content" style="padding: 5px;">
         <div id="featured">
           <div class="row">
-            <h5 class="center grey-text text-darken-2">Loading...</h5>
-            <div class="progress" style="margin: auto; width: 40%;">
-              <div class="indeterminate"></div>
+            <div class="loading">
+              <div class="preloader-wrapper small active">
+                <div class="spinner-layer spinner-green-only">
+                  <div class="circle-clipper left">
+                    <div class="circle"></div>
+                  </div><div class="gap-patch">
+                    <div class="circle"></div>
+                  </div><div class="circle-clipper right">
+                    <div class="circle"></div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -118,7 +127,7 @@
           <input type="password" id="signup-password" required />
           <label for="signup-password">Choose password</label>
         </div>
-        <button class="btn yellow darken-2 z-depth-0">Sign Up</button>
+        <button class="btn yellow waves-effect waves-light darken-2 z-depth-0">Sign Up</button>
       </form>
     </div>
   </div>
@@ -136,7 +145,7 @@
           <input type="password" id="login-password" required />
           <label for="login-password">Your password</label>
         </div>
-        <button class="btn yellow darken-2 z-depth-0">Login</button>
+        <button class="btn yellow darken-2 z-depth-0 waves-effect waves-light">Login</button>
       </form>
     </div>
   </div>
@@ -152,7 +161,7 @@
   <!-- CREATE CATEGORY MODAL -->
   <div id="modal-category" class="modal">
     <div class="modal-content center">
-      <h4>Create Category</h4>
+      <h5 style="margin: 0px;">Create Category</h5>
       <form id="create-category-form">
         <div class="input-field">
           <input type="text" id="cat_name" required>
@@ -162,7 +171,7 @@
           <textarea id="cat_description" class="materialize-textarea" required></textarea>
           <label for="content">Category Description</label>
         </div>
-        <button class="btn yellow darken-2 z-depth-0">Create</button>
+        <button class="btn yellow darken-2 z-depth-0 waves-effect waves-light">Create</button>
       </form>
     </div>
   </div>
@@ -199,14 +208,14 @@
             <input class="file-path validate" type="text" required>
           </div>
         </div>
-      <button class="btn yellow darken-2 z-depth-0">Create</button>
+      <button class="btn yellow darken-2 z-depth-0 waves-effect waves-light">Create</button>
       </form>
     </div>
   </div>
 
 <!-- FLOATING BOTTOM BUTTON -->
   <div class=" logged-in fixed-action-btn" style="display:none">
-    <a class="btn-floating btn-large teal">
+    <a class="btn-floating btn-large teal pulse">
       <i class="large material-icons">add</i>
     </a>
     <ul>
