@@ -8,6 +8,12 @@
     "orientation": "portrait-primary",
     "icons": [
         {
+            "src": "icons/android-icon-512x512-dunplab-manifest-16814.png",
+            "type": "image/png",
+            "sizes": "512x512",
+            "purpose": "any maskable"
+        },
+        {
             "src": "icons/android-icon-192x192-dunplab-manifest-16814.png",
             "type": "image/png",
             "sizes": "192x192",
