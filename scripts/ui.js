@@ -31,7 +31,7 @@ const setupUI = (user) => {
         sideNavEmail.innerHTML = 'You are not Signed In';
         sideNavName.innerHTML = 'Guest';
         accountDetails.innerHTML = '';
-        sideNavUser.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSta68gh8SBU8r4ja3Y8f1g_ikz0_1VpZNBQg&usqp=CAU'
+        sideNavUser.src = '/guest.png'
 
         // toggle UI elements
         loggedInLinks.forEach(item => item.style.display = 'none');
@@ -70,7 +70,6 @@ const setupCategories = (data) => {
     var instance = M.Tabs.init(tab, {onShow: onShow});
     function onShow (category){
         var catId = category.id
-        // console.log(catId);
         fetchItems(catId);      
     }
 }

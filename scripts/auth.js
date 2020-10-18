@@ -1,12 +1,19 @@
+// offline data
+db.enablePersistence()
+  .catch(err => {
+    if(err.code == 'failed-precondition'){
+      console.log('persistence failed');
+    } else if (err.code = 'unimplemented'){
+      console.log('persistence is not available');
+    }
+  });
+
 // listen for auth status changes
 auth.onAuthStateChanged(user => {
-  // console.log(user);
   if (user) {
-    // console.log('user logged in: ', user);
     setupUI(user)
   } else {
     setupUI()
-    // console.log('user logged out');
   }
 });
 
@@ -58,7 +65,6 @@ loginForm.addEventListener('submit', (e) => {
 
   // log in the user
   auth.signInWithEmailAndPassword(email, password).then(cred => {
-    console.log(cred.user);
     // close the signup modal & reset form
     const modal = document.querySelector('#modal-login');
     M.Modal.getInstance(modal).close();
@@ -73,18 +79,15 @@ itemForm.addEventListener('submit', (e) => {
   e.preventDefault();
 
   file = itemForm['item_image'].files[0];
-  console.log(file);
   const storageRef = storage.ref(file.name);
-  console.log(storageRef);
   storageRef.put(file).on('state_changed', (snap) => {
     let percentage = (snap.bytesTransferred / snap.totalBytes) * 100;
     // for uploading animation in case
     // setProgress(percentage);
   }, (err) => {
-    console.log(err);
+    console.log("error occur while creating item");
   }, async () => {
     const url = await storageRef.getDownloadURL();
-    console.log('touching database');
     // storing item data to firestore
     db.collection('items').add({
       item_name: itemForm['item_name'].value,
@@ -98,7 +101,6 @@ itemForm.addEventListener('submit', (e) => {
       const modal = document.querySelector('#modal-item');
       M.Modal.getInstance(modal).close();
       itemForm.reset();
-      // console.log(cat_name);
       M.toast({html: `Item is successfully created!`});
     })
   })

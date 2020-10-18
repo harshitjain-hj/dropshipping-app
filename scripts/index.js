@@ -22,7 +22,6 @@ categoryForm.addEventListener('submit', (e) => {
     const modal = document.querySelector('#modal-category');
     M.Modal.getInstance(modal).close();
     categoryForm.reset();
-    // console.log(cat_name);
     M.toast({html: `Category is successfully created!`});
   }).catch(err => {
     console.log('Hey smarty! How you doin?');

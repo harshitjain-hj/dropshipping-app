@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- Materialize -->
+  <link rel="stylesheet" href="/css/materialize.min.css">
+  <script src="/scripts/materialize.min.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/ui.css">
+  <title>Drop Ship</title>
+
+  <link rel="manifest" href="manifest.json">
+
+  <!-- ios support -->
+  <link rel="apple-touch-icon" href="icons/favicon-96x96-dunplab-manifest-16814.png">
+  <meta name="apple-mobile-web-app-status-bar" contents="#aa7700">
+
+  <!-- Chrome, Firefox OS and Opera -->
+  <meta name="theme-color" content="#f5f5f5">
+  <!-- iOS Safari -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="#f5f5f5">
+  <!-- favicon icon -->
+  <link rel="icon" type="image/png" href="/favicon.ico">
+  <!-- for IE -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" >
+</head>
+<body class="grey lighten-4">
+
+  <!-- NAVBAR -->
+  <!-- MOBILE SIDENAV -->
+  <ul class="sidenav grey lighten-4" id="mobile-demo">
+    <li>
+      <div class="user-view inverted">
+        <div class="background">
+          <img src="/account-background.jpg">
+        </div>
+        <a href="#user"><img class="circle user" src="/guest.png"></a>
+        <a href="#name"><span class="white-text name">Guest</span></a>
+        <a href="#email"><span class="white-text email">You are not Signed In</span></a>
+      </div>
+    </li>
+    <li class="logged-in" style="display:none">
+      <a href="#" class="modal-trigger" data-target="modal-account"><i class="material-icons">account_circle</i>Account</a>
+    </li>
+    <li class="center-align">
+      <span class="switch">
+        <label>
+          Light
+          <input name="theme" type="checkbox">
+          <span class="lever"></span>
+          Dark
+        </label>
+      </span>
+      <span class="new badge" data-badge-caption="Beta"></span>
+    </li>
+  </ul>
+  
+
+  <div class="container">
+    <div class="card z-depth-0 grey lighten-4">
+      <div class="card-content" style="padding: 0;">
+        <ul class="collection " style="border: none; margin: 0px">
+          <li class="collection-item z-depth-0 grey lighten-4">
+            <div>
+              <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+              <a href="/" class="secondary-content"><i class="material-icons">refresh</i></a>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="card-content grey lighten-4 categories_content" style="padding: 5px;">
+        <div id="featured" class="center amber-text lighten-3">
+            <h5>PLEASE CHECK YOUR CONNECTION!</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+    <script src="/scripts/app.js"></script>
+    <script src="scripts/ui.js"></script>
+</body>
+</html>

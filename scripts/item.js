@@ -127,7 +127,6 @@ updateItemForm.addEventListener('submit', evt => {
     db.collection('items').doc(data_id).get().then((item) => {
         
         item_image_url = item.data().item_image;
-        console.log(item_image_url);
             // IF IMAGE IS REQUESTED TO BE UPDATED AS WELL
             if(updateItemForm['item_image'].value){          
             
@@ -137,15 +136,13 @@ updateItemForm.addEventListener('submit', evt => {
                     
                     // UPLOADING NEW IMAGE
                     file = updateItemForm['item_image'].files[0];
-                    console.log(file);
                     const storageRef = storage.ref(file.name);
-                    console.log(storageRef);
                     storageRef.put(file).on('state_changed', (snap) => {
                         // let percentage = (snap.bytesTransferred / snap.totalBytes) * 100;
                         // for uploading animation in case
                         // setProgress(percentage);
                     }, (err) => {
-                        console.log(err);
+                        console.log('error while uploading image');
                     }, async () => {
                         item_image_url = await storageRef.getDownloadURL();
                         db.collection('items').doc(data_id).update({
